@@ -3,6 +3,7 @@ import Box from "./Box";
 import Catagorey from "./Catagorey";
 import Feature from "./Feature/Feature";
 import PopularMeny from "./PopularMenu/PopularMeny";
+import Review from "./Review";
 
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
            {/* <Box></Box> */}
            <PopularMeny></PopularMeny>
            <Feature></Feature>
+           <Review></Review>
         </div>
     );
 };
