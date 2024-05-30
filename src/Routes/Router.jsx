@@ -4,6 +4,12 @@ import Home from "../Home/Home/Home";
 import OurMenu from "../OurMenuPage/OurMenu/OurMenu";
 import Order from "../Order/Order/Order";
 import Login from "../Auth/Login";
+import SignUp from "../Auth/SignUp";
+import Secret from "../PrivateRoute/Secret";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import DashBoard from "../Layout/DashBoard";
+import UserPurchaseHistroy from "../UserDashBoard/UserPurchaseHistroy";
+
 
 const router=createBrowserRouter([
     {
@@ -25,8 +31,26 @@ const router=createBrowserRouter([
             {
                 path:'/login',
                 element:<Login></Login>
+            },
+            {
+                path:'/signup',
+                element:<SignUp></SignUp>
+            },{
+                path:'/secret',
+                element:<PrivateRoute><Secret></Secret></PrivateRoute>
             }
         ]
+    },
+    {
+        path:'/dashboard',
+        element:<DashBoard></DashBoard>,
+        children:[
+            {
+                path:'cart',
+                element:<UserPurchaseHistroy></UserPurchaseHistroy>
+            }
+        ]
+
     }
 ])
 export default router;

@@ -1,14 +1,45 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
-
+import { AutContext } from "../Provider/AuthProvider";
+import { FaCartShopping } from "react-icons/fa6";
+import UseCart from "../Hooks/UseCart";
 
 const Navbar = () => {
+  const {user,Logout}=useContext(AutContext);
+  const [cart]=UseCart();
+  const handleLogout=()=>{
+    Logout()
+    .then(()=>{
+      alert("Log out Sucessfully ");
+    })
+    .catch(error=>{
+      console.log(error);
+    })
+  }
     const navOption=<>
            
             <li><Link to='/'>Home </Link> </li>
               
               <li><Link to='/ourmenu'>Our Menu</Link> </li>
               <li><Link to='/order'>Order Food </Link> </li>
-              <li><Link to='/login'>Log in </Link> </li>
+
+              <li><Link to='/dashboard/cart'>
+                
+                <div className="indicator">
+  <span className="indicator-item badge badge-secondary"></span> 
+  <button className="btn"><FaCartShopping />{cart.length} </button>
+</div>
+                
+                </Link> </li>
+          {
+              user?  <button onClick={handleLogout}><li><Link to=''>Log Out </Link> </li></button>
+               : <li><Link to='/login'>Log in </Link> </li>
+          }
+              <li><Link to='/signup'>Sign Up </Link> </li>
+              <li><Link to='/secret'>Secret </Link> </li>
+    {user?.email}
+
+    
     </>
     return (
         <div className="navbar fixed z-10 bg-opacity-30 max-w-7xl text-white bg-black">
