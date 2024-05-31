@@ -8,11 +8,19 @@ import { MdAddCard } from "react-icons/md";
 
 
 const DashBoard = () => {
+    const isAdmin=true;
     return (
         <div className="flex">
             <div className="w-64 min-h-screen bg-orange-400">
               <ul className="menu">
-                <li>
+               {
+                isAdmin ?
+                <>
+
+                </>
+                :
+                <>
+                 <li>
                     <NavLink to="/dashboard/cart">    <FaCartArrowDown /> My Cart </NavLink>
                  
                 </li>
@@ -31,7 +39,8 @@ const DashBoard = () => {
                 <li>
                     <NavLink to="/dashboard/mybookings">  <MdAddCard /> My bookings</NavLink>
                  
-                </li>
+                </li></>
+               }
                 <div className="divider">OR</div>
                 <li>
                     <NavLink to="/">  <MdAddCard /> Home</NavLink>

@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import { AutContext } from "../Provider/AuthProvider";
+import UseAxiousPublic from "../Hooks/UseAxiousPublic";
 
 const SignUp = () => {
-   
+   const axiousPublic=UseAxiousPublic();
     const {createUser}=useContext(AutContext);
     const HandleSignUp=event=>{
         event.preventDefault();
@@ -14,6 +15,15 @@ const SignUp = () => {
         .then(result=>{
             const user=result.user;
             console.log(user);
+            const userInfo={
+              email:email
+            }
+            axiousPublic.post('/users',userInfo)
+            // .then(res=>{
+            //   if(res.data.insertedId){
+            //     alert(" user Posted SucessFully");
+            //   }
+            // })
             alert(" User Create Sucessfully ");
         })
         .catch(error=>{
