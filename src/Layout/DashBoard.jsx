@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FaCartArrowDown } from "react-icons/fa";
+import { FaBook, FaCartArrowDown, FaList, FaUsers, FaUtensils } from "react-icons/fa";
 import { FaHome } from "react-icons/fa";
 import { FaCalendarAlt } from "react-icons/fa";
 import { MdAddBox } from "react-icons/md";
@@ -16,7 +16,26 @@ const DashBoard = () => {
                {
                 isAdmin ?
                 <>
-
+                 <li>
+                    <NavLink to="/dashboard/adminhome">    <FaCartArrowDown /> Admin Home </NavLink>
+                 
+                </li>
+                <li>
+                    <NavLink to="/dashboard/aditem">  <FaUtensils></FaUtensils>   Add Item </NavLink>
+                 
+                </li>
+                <li>
+                    <NavLink to="/dashboard/manageitems">  <FaList></FaList> ManageItems </NavLink>
+                 
+                </li>
+                <li>
+                    <NavLink to="/dashboard/managebookings">  <FaBook></FaBook> ManageBookings </NavLink>
+                 
+                </li>
+                <li>
+                    <NavLink to="/dashboard/users"> <FaUsers></FaUsers>  AllUsers</NavLink>
+                 
+                </li>
                 </>
                 :
                 <>
@@ -54,7 +73,7 @@ const DashBoard = () => {
             </div>
             
             <div className="flex-1 p-8">
-          <Outlet></Outlet>
+            <Outlet></Outlet>
           
             </div>
         </div>

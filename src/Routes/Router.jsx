@@ -9,6 +9,8 @@ import Secret from "../PrivateRoute/Secret";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import DashBoard from "../Layout/DashBoard";
 import UserPurchaseHistroy from "../UserDashBoard/UserPurchaseHistroy";
+import AllUsers from "../AdminSection/AllUsers";
+
 
 
 const router=createBrowserRouter([
@@ -48,7 +50,14 @@ const router=createBrowserRouter([
             {
                 path:'cart',
                 element:<UserPurchaseHistroy></UserPurchaseHistroy>
+            },
+
+            {
+                path:'users',
+                element:<AllUsers></AllUsers>
             }
+
+          
         ]
 
     }
