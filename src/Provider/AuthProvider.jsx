@@ -40,11 +40,16 @@ const createUser=(email,password)=>{
     return createUserWithEmailAndPassword(auth,email,password);
 }
 
-const signin=(email,password)=>{
-    setLoading(true);
-   return signInWithEmailAndPassword(auth,email,password);
-}
+// const signin=(email,password)=>{
+//     setLoading(true);
+//    return signInWithEmailAndPassword(auth,email,password);
+// }
 
+const signin=(email,password)=>{
+    console.log("here");
+    setLoading(true);
+    return signInWithEmailAndPassword(auth,email,password);
+}
 const Logout=()=>{
     setLoading(true);
     return signOut(auth);

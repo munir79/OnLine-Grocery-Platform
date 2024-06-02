@@ -9,7 +9,7 @@ const SignUp = () => {
         event.preventDefault();
         const form=event.target;
         const email=form.email.value;
-        const password=form.email.value;
+        const password=form.password.value;
         console.log(email,password);
         createUser(email,password)
         .then(result=>{

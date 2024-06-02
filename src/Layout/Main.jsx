@@ -6,12 +6,13 @@ import Footer from "../Shared/Footer";
 const Main = () => {
     const location=useLocation();
     console.log(location);
-    const isLoging=location.pathname.includes('/login');
+    // const isLoging=location.pathname.includes('/login');
+    const noHeaderFooter = location.pathname.includes('/login') || location.pathname.includes('/signup');
     return (
         <div>
-           { isLoging || <Navbar></Navbar>}
+           { noHeaderFooter|| <Navbar></Navbar>}
             <Outlet></Outlet>
-           { isLoging ||  <Footer></Footer>  }
+           { noHeaderFooter ||  <Footer></Footer>  }
         </div>
     );
 };
