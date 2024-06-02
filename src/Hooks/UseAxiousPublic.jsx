@@ -6,6 +6,7 @@ import axios from "axios";
 })
 
 const UseAxiousPublic = () => {
+    
     return axiosPublic;
 };
 

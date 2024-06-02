@@ -4,11 +4,12 @@ import { FaHome } from "react-icons/fa";
 import { FaCalendarAlt } from "react-icons/fa";
 import { MdAddBox } from "react-icons/md";
 import { MdAddCard } from "react-icons/md";
+import UseAdmin from "../Hooks/UseAdmin";
 
 
 
 const DashBoard = () => {
-    const isAdmin=true;
+    const [isAdmin]=UseAdmin();
     return (
         <div className="flex">
             <div className="w-64 min-h-screen bg-orange-400">

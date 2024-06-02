@@ -20,6 +20,7 @@ const AllUsers = () => {
       .then(res=>{
         console.log(res.data);
         if(res.data.modifiedCount>0){
+          refetch();
           Swal.fire({
             position: "top-end",
             icon: "success",
@@ -72,7 +73,7 @@ const AllUsers = () => {
             </div>
         
             <div className="overflow-x-auto">
-  <table className="table">
+  <table className="table table-zebra ">
     {/* head */}
     <thead>
       <tr>
