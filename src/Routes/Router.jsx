@@ -10,7 +10,9 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import DashBoard from "../Layout/DashBoard";
 import UserPurchaseHistroy from "../UserDashBoard/UserPurchaseHistroy";
 import AllUsers from "../AdminSection/AllUsers";
-import MyLogin from "../Auth/MyLogin";
+import AddItem from "../AdminSection/AddItem/AddItem";
+import AdminRoute from "./AdminRoute";
+
 
 
 
@@ -45,14 +47,20 @@ const router=createBrowserRouter([
         ]
     },
     {
-        path:'/dashboard',
+        path:'dashboard',
         element:<DashBoard></DashBoard>,
         children:[
             {
                 path:'cart',
                 element:<UserPurchaseHistroy></UserPurchaseHistroy>
             },
+    // Admin Route
 
+             
+    {
+        path:'aditem',
+        element: <AddItem></AddItem> 
+    },
             {
                 path:'users',
                 element:<AllUsers></AllUsers>

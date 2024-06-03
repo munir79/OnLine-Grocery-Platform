@@ -38,8 +38,8 @@ const UserPurchaseHistroy = () => {
     return (
         <div >
         <div className='flex justify-evenly'>
-        <h4 className='text-4xl'> Total Items:{cart.length}  </h4>
-            <h4 className='text-4xl'> Total Price:{totalPrice}   </h4>
+        <h4 className='text-2xl'> Total Items:{cart.length}  </h4>
+            <h4 className='text-2xl p-6'> Total Price:{totalPrice}   </h4>
             <button className='btn btn-primary'>Pay </button>
         </div>
 
