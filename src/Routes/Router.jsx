@@ -12,6 +12,7 @@ import UserPurchaseHistroy from "../UserDashBoard/UserPurchaseHistroy";
 import AllUsers from "../AdminSection/AllUsers";
 import AddItem from "../AdminSection/AddItem/AddItem";
 import AdminRoute from "./AdminRoute";
+import ManageItem from "../AdminSection/ManageItem/ManageItem";
 
 
 
@@ -64,6 +65,10 @@ const router=createBrowserRouter([
             {
                 path:'users',
                 element:<AllUsers></AllUsers>
+            },
+            {
+                path:'manageitems',
+                element:<ManageItem></ManageItem>
             }
 
           
