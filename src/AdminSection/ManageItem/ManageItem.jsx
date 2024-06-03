@@ -5,6 +5,7 @@ import { FaTrash } from 'react-icons/fa6';
 import { FaEdit } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import UseAxiosSecure from '../../Hooks/UseAxiosSecure';
+import { Link } from 'react-router-dom';
 
 const ManageItem = () => {
     
@@ -82,7 +83,7 @@ const ManageItem = () => {
             </td>
             <td> ${item.price} </td>
             <td>
-            <button className="btn btn-ghost btn-sm bg-orange-500"><FaEdit className='text-white'></FaEdit> </button>
+           <Link to={`/dashboard/updateItem/${item._id}`}> <button className="btn btn-ghost btn-sm bg-orange-500"><FaEdit className='text-white'></FaEdit> </button></Link>
             </td>
             <td>
             <button  onClick={()=>handleDeleteItem(item)} className="btn btn-ghost btn-lg text-red-600"> <FaTrash></FaTrash></button>

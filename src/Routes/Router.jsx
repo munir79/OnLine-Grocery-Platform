@@ -13,6 +13,7 @@ import AllUsers from "../AdminSection/AllUsers";
 import AddItem from "../AdminSection/AddItem/AddItem";
 import AdminRoute from "./AdminRoute";
 import ManageItem from "../AdminSection/ManageItem/ManageItem";
+import UpdateItem from "../AdminSection/UpdateItem/UpdateItem";
 
 
 
@@ -65,6 +66,11 @@ const router=createBrowserRouter([
             {
                 path:'users',
                 element:<AllUsers></AllUsers>
+            },
+            {
+             path:'updateItem/:id',
+             element:<UpdateItem></UpdateItem>,
+             loader:({params})=>fetch(`http://localhost:5000/menu/${params.id}`)
             },
             {
                 path:'manageitems',
