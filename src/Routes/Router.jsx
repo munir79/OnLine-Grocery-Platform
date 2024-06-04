@@ -14,6 +14,7 @@ import AddItem from "../AdminSection/AddItem/AddItem";
 import AdminRoute from "./AdminRoute";
 import ManageItem from "../AdminSection/ManageItem/ManageItem";
 import UpdateItem from "../AdminSection/UpdateItem/UpdateItem";
+import Payment from "../Payment/Payment";
 
 
 
@@ -45,9 +46,14 @@ const router=createBrowserRouter([
             },{
                 path:'/secret',
                 element:<PrivateRoute><Secret></Secret></PrivateRoute>
-            }
+            },
+            
         ]
     },
+
+
+
+    //admin
     {
         path:'dashboard',
         element:<DashBoard></DashBoard>,
@@ -56,7 +62,11 @@ const router=createBrowserRouter([
                 path:'cart',
                 element:<UserPurchaseHistroy></UserPurchaseHistroy>
             },
-    // Admin Route
+            {
+                path:'payment',
+                element:<Payment></Payment>
+            },
+    // Admin only Route
 
              
     {

@@ -3,6 +3,7 @@ import UseCart from '../Hooks/UseCart';
 import { FaTrashAlt } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import UseAxiosSecure from '../Hooks/UseAxiosSecure';
+import { Link } from 'react-router-dom';
 
 const UserPurchaseHistroy = () => {
     const [cart,refetch]=UseCart();
@@ -40,7 +41,7 @@ const UserPurchaseHistroy = () => {
         <div className='flex justify-evenly'>
         <h4 className='text-2xl'> Total Items:{cart.length}  </h4>
             <h4 className='text-2xl p-6'> Total Price:{totalPrice}   </h4>
-            <button className='btn btn-primary'>Pay </button>
+            { cart.length?<Link to='/dashboard/payment'><button  className='btn btn-primary'>Pay </button></Link>:<button disabled className='btn btn-primary'>Pay </button>}
         </div>
 
         <div className="overflow-x-auto">
