@@ -24,7 +24,7 @@ const handleAddToCart=()=>{
     name,
     menuId:_id,
     email:user.email,
-    name,
+   
     image,
     price
   

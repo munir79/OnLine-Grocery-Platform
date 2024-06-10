@@ -3,6 +3,9 @@ import { useEffect, useState } from "react";
 import UseAxiosSecure from "../Hooks/UseAxiosSecure";
 import UseCart from "../Hooks/UseCart";
 import UseAuth from "../Hooks/UseAuth";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
+
 
 
 const CheekOutForm = () => {
@@ -14,15 +17,18 @@ const CheekOutForm = () => {
     const elements=useElements();
     const axiousSecure=UseAxiosSecure();
 
-    const [cart]=UseCart();
+    const [cart,refecth]=UseCart();
+    const navigate=useNavigate();
     const totalPrice=cart.reduce((total,item)=>total=item.price ,0)
 
     useEffect(()=>{
+      if(totalPrice>0){
         axiousSecure.post('/create-payment-intent',{price:totalPrice})
         .then(res=>{
             console.log(res.data.clientSecret);
             setClientSecrect(res.data.clientSecret);
         })
+      }
 
     } ,[axiousSecure,totalPrice])
     const handlePaymentSubmit=async(event)=>{
@@ -71,7 +77,7 @@ const CheekOutForm = () => {
 
                 // now payment set in the database
                 const payment={
-                    email:user.eamil,
+                    email:user.email,
                     price:totalPrice,
                     transactionId:paymentIntent.id,
                     date:new Date(),
@@ -81,6 +87,21 @@ const CheekOutForm = () => {
                 }
                const res= await axiousSecure.post('/payments',payment);
                console.log("payment saving..", res.data);
+               res.data();
+               if(res.data?.PaymentResult?.insertedId){
+                Swal.fire({
+                  position: "top-end",
+                  icon: "success",
+                  title: "Your work has been saved",
+                  showConfirmButton: false,
+                  timer: 1500
+                });
+               navigate('/dashboard/paymentHistory');
+               }
+
+             
+               
+
 
             }
         }
