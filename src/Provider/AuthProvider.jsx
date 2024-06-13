@@ -21,13 +21,15 @@ const AuthProvider = ({ children }) => {
                .then(res=>{
                 if(res.data.token){
                     localStorage.setItem("acess-token",res.data.token);
+                    setLoading(false);
                 }
                })
             }
             else{
               localStorage.removeItem("acess-token");
+              setLoading(false);
             }
-            setLoading(false);
+           
         } )
 
         return()=>{

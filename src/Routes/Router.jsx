@@ -16,6 +16,8 @@ import ManageItem from "../AdminSection/ManageItem/ManageItem";
 import UpdateItem from "../AdminSection/UpdateItem/UpdateItem";
 import Payment from "../Payment/Payment";
 import PaymentHistory from "../Payment/PaymentHostory/PaymentHistory";
+import UserHome from "../UserHome/UserHome";
+import AdminHome from "../AdminHome/AdminHome";
 
 
 
@@ -60,6 +62,10 @@ const router=createBrowserRouter([
         element:<DashBoard></DashBoard>,
         children:[
             {
+            path:'userHome',
+            element:<UserHome></UserHome>
+            },
+            {
                 path:'cart',
                 element:<UserPurchaseHistroy></UserPurchaseHistroy>
             },
@@ -73,6 +79,10 @@ const router=createBrowserRouter([
             },
     // Admin only Route
 
+    {
+   path:'adminHome',
+   element:<AdminHome></AdminHome>
+    },
              
     {
         path:'aditem',

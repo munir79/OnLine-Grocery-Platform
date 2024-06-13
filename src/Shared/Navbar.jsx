@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import { AutContext } from "../Provider/AuthProvider";
 import { FaCartShopping } from "react-icons/fa6";
 import UseCart from "../Hooks/UseCart";
+import UseAdmin from "../Hooks/UseAdmin";
 
 const Navbar = () => {
   const {user,Logout}=useContext(AutContext);
+  const [isAdmin]=UseAdmin();
   const [cart]=UseCart();
   const handleLogout=()=>{
     Logout()
@@ -22,12 +24,18 @@ const Navbar = () => {
               
               <li><Link to='/ourmenu'>Our Menu</Link> </li>
               <li><Link to='/order'>Order Food </Link> </li>
+              {/* {
+                user && isAdmin &&   <li><Link to='/dashboard/adminHome'>Order Food </Link> </li>
+              }
+              {
+                user && isAdmin &&   <li><Link to='/dashboard/userHome'>Order Food </Link> </li>
+              } */}
 
               <li><Link to='/dashboard/cart'>
                 
                 <div className="indicator">
-  <span className="indicator-item badge badge-secondary"></span> 
-  <button className="btn"><FaCartShopping />{cart.length} </button>
+         <span className="indicator-item badge badge-secondary"></span> 
+        <button className="btn"><FaCartShopping />{cart.length} </button>
 </div>
                 
                 </Link> </li>
@@ -36,8 +44,8 @@ const Navbar = () => {
                : <li><Link to='/login'>Log in </Link> </li>
           }
               <li><Link to='/signup'>Sign Up </Link> </li>
-              <li><Link to='/secret'>Secret </Link> </li>
-    {user?.email}
+              {/* <li><Link to='/secret'>Secret </Link> </li> */}
+   
 
     
     </>
@@ -61,7 +69,8 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+        {user?.email ?  <a className="btn"> {user.email} </a>: ""}
+         
         </div>
       </div>
     );
