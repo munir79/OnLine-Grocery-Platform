@@ -1,6 +1,6 @@
 import React from 'react';
 import SectionTittle from '../../../Component/SectionTittle/SectionTittle';
-import fet from '../../../assets/home/featured.jpg'
+import fet from '../../../assets/home/feat1.jpg'
 import '../../../Css/Feature.css'
 
 const Feature = () => {

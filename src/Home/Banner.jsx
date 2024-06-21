@@ -1,12 +1,12 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 
-import ban1 from '../assets/home/02.jpg';
-import ban2 from '../assets/home/02.jpg';
-import ban3 from '../assets/home/03.png';
-import ban4 from '../assets/home/04.jpg';
-import ban5 from '../assets/home/05.png';
-import ban6 from '../assets/home/06.png';
+import ban1 from '../assets/home/grr1.jpeg';
+import ban2 from '../assets/home/grr2.jpeg';
+import ban3 from '../assets/home/grr3.jpeg';
+import ban4 from '../assets/home/gr4.jpg';
+import ban5 from '../assets/home/gr5.jpg';
+import ban6 from '../assets/home/gr6.jpg';
 const Banner = () => {
     return (
         <Carousel>

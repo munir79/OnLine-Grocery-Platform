@@ -82,11 +82,11 @@ const AddItem = () => {
   required
        className="select select-bordered w-full ">
   <option disabled value="default">Select a Categorey</option>
-  <option value="salad">salad</option>
-  <option value="Pizza">Pizza</option>
-  <option value="Desert1">Desert</option>
-  <option value="soup">soup</option>
-  <option value="offered">Drinks</option>
+  <option value="Vegitables">Vegitables</option>
+  <option value="Grains">Grains</option>
+  <option value="Dairy">Dairy</option>
+  <option value="Meat">Meat</option>
+  <option value="Fruits">Fruits</option>
 
 </select>
   

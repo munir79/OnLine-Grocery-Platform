@@ -60,7 +60,7 @@ const Navbar = () => {
             {navOption}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">BISTRO BOSS
+          <a className="btn btn-ghost text-xl">NEXA
 </a>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -68,10 +68,10 @@ const Navbar = () => {
             {navOption}
           </ul>
         </div>
-        <div className="navbar-end">
+        {/* <div className="navbar-end">
         {user?.email ?  <a className="btn"> {user.email} </a>: ""}
          
-        </div>
+        </div> */}
       </div>
     );
 };
